@@ -39,13 +39,13 @@
                                                                 <constraint firstAttribute="width" constant="65" id="lkq-bg-vjb"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PD-dg-su3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1PD-dg-su3">
                                                             <rect key="frame" x="89" y="35.5" width="274" height="14.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwe-pP-i5d">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwe-pP-i5d">
                                                             <rect key="frame" x="89" y="12" width="74.5" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
@@ -54,6 +54,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="1PD-dg-su3" secondAttribute="bottom" constant="14" id="3ao-YN-6nd"/>
                                                         <constraint firstItem="Zwe-pP-i5d" firstAttribute="leading" secondItem="sAI-4s-oOl" secondAttribute="trailing" constant="12" id="62a-6U-1mz"/>
                                                         <constraint firstItem="sAI-4s-oOl" firstAttribute="top" secondItem="jGg-ux-trD" secondAttribute="top" constant="12" id="KKx-Tl-DpJ"/>
                                                         <constraint firstItem="1PD-dg-su3" firstAttribute="leading" secondItem="sAI-4s-oOl" secondAttribute="trailing" constant="12" id="PCM-e2-NH2"/>

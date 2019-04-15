@@ -56,6 +56,7 @@
 		1C0A5B3B225FD6BB00AC97CD /* 2Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1C9B54BE22645B1E001BA308 /* Controller */,
 				1C9B54B8226441EA001BA308 /* View */,
 				1C0A5B3C225FD6BB00AC97CD /* AppDelegate.swift */,
 				1C0A5B3E225FD6BB00AC97CD /* ViewController.swift */,
@@ -73,6 +74,13 @@
 				1C9B54B92264420B001BA308 /* CommentTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1C9B54BE22645B1E001BA308 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

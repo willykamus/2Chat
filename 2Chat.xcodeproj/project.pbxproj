@@ -12,6 +12,7 @@
 		1C0A5B42225FD6BB00AC97CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0A5B40225FD6BB00AC97CD /* Main.storyboard */; };
 		1C0A5B44225FD6C600AC97CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0A5B43225FD6C600AC97CD /* Assets.xcassets */; };
 		1C0A5B47225FD6C600AC97CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0A5B45225FD6C600AC97CD /* LaunchScreen.storyboard */; };
+		1C9B54BA2264420B001BA308 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9B54B92264420B001BA308 /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1C0A5B43225FD6C600AC97CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C0A5B46225FD6C600AC97CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C0A5B48225FD6C600AC97CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C9B54B92264420B001BA308 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		1C0A5B3B225FD6BB00AC97CD /* 2Chat */ = {
 			isa = PBXGroup;
 			children = (
+				1C9B54B8226441EA001BA308 /* View */,
 				1C0A5B3C225FD6BB00AC97CD /* AppDelegate.swift */,
 				1C0A5B3E225FD6BB00AC97CD /* ViewController.swift */,
 				1C0A5B40225FD6BB00AC97CD /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				1C0A5B48225FD6C600AC97CD /* Info.plist */,
 			);
 			path = 2Chat;
+			sourceTree = "<group>";
+		};
+		1C9B54B8226441EA001BA308 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C9B54B92264420B001BA308 /* CommentTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C0A5B3F225FD6BB00AC97CD /* ViewController.swift in Sources */,
+				1C9B54BA2264420B001BA308 /* CommentTableViewCell.swift in Sources */,
 				1C0A5B3D225FD6BB00AC97CD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,15 +39,12 @@ class ViewController: UIViewController {
         let rating = Rate()
         
         rating.comment = "the game is a great time killer. some things locked behind pay wall. strategy game do like the step up banners do enjoy the game for what it is worth"
-        rating.rate = 4.5
         rating.username = "Willykamus"
         
         rates.append(rating)
         
         let rating1 = Rate()
         rating1.comment = "Its a really great game, I've had a bunch of diffrent accounts over the years that its been out. But the reason I'm only giving it 3 stars is because of the new key thing, were you have to have keys to play some of the storys. And I don't want to have to wait to have them gifted. I think we should"
-        rating1.rate = 3
-        
         rating1.username = "Sara"
         
         rates.append(rating1)
@@ -77,9 +74,12 @@ extension ViewController: UITableViewDelegate {
             let DvC = storyboard.instantiateViewController(withIdentifier: "ReplyViewController") as! ReplyViewController
             
             let cell = self.commentsTable.cellForRow(at: indexPath) as! CommentTableViewCell
+        
             
-            DvC.getComment = cell.commentLabel.text!
-            DvC.getUsername = cell.username.text!
+            let selectedRate = Rate()
+            selectedRate.comment = cell.commentLabel.text!
+            selectedRate.username = cell.username.text!
+            DvC.getUserRate.append(selectedRate)
             
             self.navigationController?.pushViewController(DvC, animated: true)
             

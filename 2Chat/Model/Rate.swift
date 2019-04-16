@@ -12,6 +12,5 @@ class Rate: NSObject {
     
     var comment: String?
     var username: String?
-    var rate: Float?
     
 }

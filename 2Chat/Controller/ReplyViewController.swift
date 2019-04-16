@@ -10,8 +10,8 @@ import UIKit
 
 class ReplyViewController: UIViewController, UITextFieldDelegate {
 
-    var getComment = String()
-    var getUsername = String()
+    var username = "Deparment"
+    var getUserRate = [Rate]()
     
     var cellid = "CommentCell"
     
@@ -24,7 +24,7 @@ class ReplyViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = getUsername
+        self.navigationItem.title = getUserRate[0].username
         
         collectionComment.delegate = self
 
@@ -78,6 +78,26 @@ class ReplyViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    @IBAction func handleSend(_ sender: UIButton) {
+        
+        print("Send")
+        
+        let depReply = Rate()
+        depReply.comment = replyInput.text!
+        depReply.username = username
+        
+        getUserRate.append(depReply)
+        
+        let lastRow = getUserRate.count - 1
+        
+        let insertionIndexPath = IndexPath(row: lastRow, section: 0)
+        
+        collectionComment.insertItems(at: [insertionIndexPath])
+        
+        
+    }
+    
+    
     
     
 
@@ -113,7 +133,7 @@ extension ReplyViewController: UICollectionViewDelegateFlowLayout{
 
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
 
-        let estimateFrame = NSString(string: getComment).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        let estimateFrame = NSString(string: getUserRate[indexPath.row].comment!).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
 
         return CGSize(width: view.frame.width, height: estimateFrame.height + 20)
 
@@ -125,7 +145,7 @@ extension ReplyViewController: UICollectionViewDelegateFlowLayout{
 extension ReplyViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return getUserRate.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -136,22 +156,35 @@ extension ReplyViewController: UICollectionViewDataSource {
         
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18)]
         
-        let estimateFrame = NSString(string: getComment).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
+        let estimateFrame = NSString(string: getUserRate[indexPath.row].comment!).boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: attributes, context: nil)
         
+        if getUserRate[indexPath.row].username != username {
+            
+            cell.commentLabel.frame = CGRect(x: 8 + 16, y: 0, width: estimateFrame.width + 8 , height: estimateFrame.height + 20)
+            cell.containerView.frame = CGRect(x: 16 + 0, y: 0, width: estimateFrame.width + 16, height: estimateFrame.height + 20)
+            
+            cell.containerView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+            cell.commentLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            
+        } else {
+            
+            cell.commentLabel.frame = CGRect(x: view.frame.width - estimateFrame.width - 20, y: 0, width: estimateFrame.width + 16, height: estimateFrame.height + 20)
+            cell.containerView.frame = CGRect(x: view.frame.width - estimateFrame.width - 32, y: 0, width: estimateFrame.width + 16 + 8, height: estimateFrame.height + 20)
+            
+            cell.containerView.backgroundColor = #colorLiteral(red: 0.00266837189, green: 0.3425685763, blue: 0.488183856, alpha: 1)
+            cell.commentLabel.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        }
         
-        cell.commentLabel.frame = CGRect(x: 8 + 8, y: 0, width: estimateFrame.width + 8, height: estimateFrame.height + 20)
-        cell.containerView.frame = CGRect(x: 8 + 0, y: 0, width: estimateFrame.width + 16 + 8, height: estimateFrame.height + 20)
         
 //        cell.contentView.layer.cornerRadius = 12
 //        cell.contentView.layer.masksToBounds = false
 //        cell.contentView.layer.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9568627451, alpha: 1)
 //        cell.layer.masksToBounds = true
         
-        cell.containerView.backgroundColor = UIColor(white: 0.95, alpha: 1)
         cell.containerView.layer.cornerRadius = 15
         cell.containerView.layer.masksToBounds = true
         
-        cell.commentLabel.text = getComment
+        cell.commentLabel.text = getUserRate[indexPath.row].comment
         cell.commentLabel.numberOfLines = 0
         
         return cell
